@@ -14,7 +14,7 @@
 |---|---|---|
 | **嵌入式（主方向）** | STM32F407 / H743、C、HAL + CubeMX、FreeRTOS、Keil MDK / ARM GCC、DMA、PWM、外部中断、USB CDC、DMA + IDLE 不定长串口接收 | 主力 |
 | **通信** | CAN（双总线并行、帧 ID 规划、电流帧打包、FIFO 分流）、RS485、UART、USB CDC；自定义帧协议（帧头 + 命令字 + 长度 + CRC16）、心跳看门狗与断连保护 | 主力 |
-| **电机与控制** | M3508 / C620、M2006、VESC、RobStride（MIT 力位混合）、Unitree GoMotor、MG996R 舵机；串级 PID、位置 / 速度闭环、三轮全向与四舵轮运动学、IMU 航向闭环 | 主力 |
+| **电机与控制** | M3508 / C620、M2006 / C610、VESC、RobStride（MIT 力位混合）、Unitree GoMotor、MG996R 舵机；串级 PID、位置 / 速度闭环、三轮全向与四舵轮运动学、IMU 航向闭环 | 主力 |
 | **机器人软件** | Linux / Ubuntu、C++、ROS 2 Humble（colcon、自定义 msg / srv、launch、RViz、TF）、KDL、YAML、gtest | 使用中 |
 | **工具链** | Git、VS Code、J-Link、Ozone、CMake | 日常 |
 | **了解** | Gazebo、MuJoCo、ros2_control | 学习中 |
@@ -24,8 +24,8 @@
 ## 🤖 Featured Projects
 
 ### 1. 四舵轮全向底盘（BR 底盘）· 嵌入式电控（独立开发）
-STM32F407 + FreeRTOS + 双 CAN；2 ms 控制周期三级嵌套闭环（轮速环 → 舵向位置环 → 偏航角速度环）；四舵轮逆解 + 90° 最优解轮 + cos³ 轮速补偿；USB CDC 上位机协议 v1.4（CRC16 + 1 ms 心跳 + 600 ms 无帧自动停车）。
-`STM32F407` `FreeRTOS` `CAN ×2` `M2006/C620` `VESC` `Kinematics` `PID`
+STM32F407 + FreeRTOS + 双 CAN；1 ms 控制周期三级嵌套闭环（轮速环 → 舵向位置环 → 偏航角速度环）；四舵轮逆解 + 90° 最优解轮 + cos³ 轮速补偿；USB CDC 上位机协议 v1.4（CRC16 + 1 ms 心跳 + 600 ms 无帧自动停车）。
+`STM32F407` `FreeRTOS` `CAN ×2` `M2006/C610` `VESC` `Kinematics` `PID`
 → [ROBOCON_RB](https://github.com/LjiaruiAT/ROBOCON_RB)（完整固件） · [项目说明](https://github.com/LjiaruiAT/robotics-embedded-portfolio/tree/main/projects/swerve-drive)
 
 ### 2. ROBOCON 排球机器人 · 电机驱动 / 应用层
