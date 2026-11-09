@@ -26,7 +26,7 @@
 ### 1. 四舵轮全向底盘（BR 底盘）· 嵌入式电控（独立开发）
 STM32F407 + FreeRTOS + 双 CAN；2 ms 控制周期三级嵌套闭环（轮速环 → 舵向位置环 → 偏航角速度环）；四舵轮逆解 + 90° 最优解轮 + cos³ 轮速补偿；USB CDC 上位机协议 v1.4（CRC16 + 1 ms 心跳 + 600 ms 无帧自动停车）。
 `STM32F407` `FreeRTOS` `CAN ×2` `M2006/C620` `VESC` `Kinematics` `PID`
-→ [项目说明](https://github.com/LjiaruiAT/robotics-embedded-portfolio/tree/main/projects/swerve-drive) · 代码 Private
+→ [ROBOCON_RB](https://github.com/LjiaruiAT/ROBOCON_RB)（完整固件） · [项目说明](https://github.com/LjiaruiAT/robotics-embedded-portfolio/tree/main/projects/swerve-drive)
 
 ### 2. ROBOCON 排球机器人 · 电机驱动 / 应用层
 三全向轮力控底盘 + 双级弹射；负责 RobStride / VESC / Unitree GoMotor 三类电机驱动接入；RobStride MIT 力位混合驱动（扩展帧 ID 编码）；F407 主控 + H743 击球子板双板分工；`HAL_UARTEx_ReceiveToIdle_DMA` 解决遥控包粘包丢包。
